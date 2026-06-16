@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://dkgmd4afxloe"]
+
+[ext_resource type="Script" uid="uid://drapywuuuinvd" path="res://enemy.gd" id="2_nv75j"]
+[ext_resource type="Texture2D" uid="uid://ym2o1uvjvkl2" path="res://pixilart-drawing (18).png" id="3_3151r"]
+[ext_resource type="Script" uid="uid://jopf05c3px42" path="res://collision_shape_2d.gd" id="4_nq5ea"]
+[ext_resource type="Script" uid="uid://b2ieabpsi2j6x" path="res://player.gd" id="5_lj8yo"]
+[ext_resource type="PackedScene" uid="uid://dj6hdi1606dgg" path="res://gpu_particles_2d.tscn" id="6_mqris"]
+[ext_resource type="Texture2D" uid="uid://b0ret3hykwry7" path="res://pixilart-drawing (12).png" id="7_uu7bs"]
+[ext_resource type="Script" uid="uid://ju1rbuahhbnn" path="res://crack.gd" id="8_8lhmn"]
+
+[sub_resource type="GDScript" id="GDScript_0hol4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4d7sh"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6r6c"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
+radius = 9.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kdubu"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[node name="Node2D" type="Node2D" unique_id=1465777856 groups=["player"]]
+script = SubResource("GDScript_0hol4")
+
+[node name="crack9" type="CharacterBody2D" parent="." unique_id=1799467936]
+position = Vector2(1216, 1381)
+script = ExtResource("8_8lhmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="crack9" unique_id=775766819]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crack9" unique_id=1599390298]
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="enemy" type="CharacterBody2D" parent="." unique_id=1533579748]
+script = ExtResource("2_nv75j")
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy" unique_id=1813875623]
+scale = Vector2(0.37999985, 0.38999996)
+texture = ExtResource("3_3151r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" unique_id=1114977892]
+shape = SubResource("CircleShape2D_q6r6c")
+script = ExtResource("4_nq5ea")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1093906612 groups=["player"]]
+script = ExtResource("5_lj8yo")
+hit_effect = ExtResource("6_mqris")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=378896167]
+position = Vector2(0, -1.999999)
+scale = Vector2(0.7350001, 0.73)
+texture = ExtResource("7_uu7bs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1217001652]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_0e48y")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="player" unique_id=1786745032]
+emitting = false
+amount = 800
+one_shot = true
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_kdubu")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1052686024]
+position_smoothing_enabled = true
+position_smoothing_speed = 17.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 17.0
+
+[node name="crack" type="CharacterBody2D" parent="." unique_id=545854413]
+position = Vector2(209, -1)
+script = ExtResource("8_8lhmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="crack" unique_id=512703257]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crack" unique_id=658120294]
+position = Vector2(158, 3)
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="crack2" type="CharacterBody2D" parent="." unique_id=1329164712]
+position = Vector2(6, -233)
+script = ExtResource("8_8lhmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="crack2" unique_id=843302713]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crack2" unique_id=802971820]
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="crack3" type="CharacterBody2D" parent="." unique_id=1284265324]
+position = Vector2(-230, 1)
+script = ExtResource("8_8lhmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="crack3" unique_id=757189958]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crack3" unique_id=1649815356]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="crack4" type="CharacterBody2D" parent="." unique_id=170919924]
+position = Vector2(11, 231)
+script = ExtResource("8_8lhmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="crack4" unique_id=989725741]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crack4" unique_id=856026023]
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="crack5" type="CharacterBody2D" parent="." unique_id=972087110]
+position = Vector2(252, 461)
+script = ExtResource("8_8lhmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="crack5" unique_id=1618895613]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crack5" unique_id=852696320]
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="crack6" type="CharacterBody2D" parent="." unique_id=1729399085]
+position = Vector2(493, 691)
+script = ExtResource("8_8lhmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="crack6" unique_id=368722301]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crack6" unique_id=1840715676]
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="crack7" type="CharacterBody2D" parent="." unique_id=2020626235]
+position = Vector2(734, 921)
+script = ExtResource("8_8lhmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="crack7" unique_id=1038358704]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crack7" unique_id=985082587]
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="crack8" type="CharacterBody2D" parent="." unique_id=1733788615]
+position = Vector2(975, 1151)
+script = ExtResource("8_8lhmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="crack8" unique_id=1732552597]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crack8" unique_id=660356823]
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="crack10" type="CharacterBody2D" parent="." unique_id=2131781696]
+position = Vector2(1457, 1611)
+script = ExtResource("8_8lhmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="crack10" unique_id=1010640263]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crack10" unique_id=1796069907]
+shape = SubResource("CircleShape2D_4d7sh")

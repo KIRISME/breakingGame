@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dj6hdi1606dgg"]
+
+[ext_resource type="Texture2D" uid="uid://c6it5jqgheipy" path="res://pixilart-drawing (17).png" id="1_ah5qx"]
+[ext_resource type="Script" uid="uid://bskpnqq413xhw" path="res://gpu_particles_2d.gd" id="2_ispy0"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_65ldm"]
+particle_flag_disable_z = true
+spread = 102.176
+initial_velocity_min = 897.51996
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 300, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D" unique_id=598647160]
+emitting = false
+amount = 3
+amount_ratio = 0.3158
+texture = ExtResource("1_ah5qx")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_65ldm")
+script = ExtResource("2_ispy0")
